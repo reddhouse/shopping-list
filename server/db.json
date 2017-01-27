@@ -1,0 +1,54 @@
+{
+  "shoppinglists": [
+    {
+      "title": "Justin's List",
+      "items": [
+        {
+          "text": "Test this",
+          "checked": true
+        },
+        {
+          "text": "We're in business!",
+          "checked": false
+        },
+        {
+          "text": "Again?",
+          "checked": false
+        }
+      ],
+      "id": 1
+    },
+    {
+      "title": "Shoes",
+      "items": [
+        {
+          "text": "Loafers",
+          "checked": false
+        },
+        {
+          "text": "Tennis Shoes",
+          "checked": true
+        },
+        {
+          "text": "Sneakers",
+          "checked": false
+        }
+      ],
+      "id": 5
+    },
+    {
+      "title": "Beans",
+      "items": [
+        {
+          "text": "Bakes",
+          "checked": false
+        },
+        {
+          "text": "Black",
+          "checked": false
+        }
+      ],
+      "id": 6
+    }
+  ]
+}
