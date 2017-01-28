@@ -8,23 +8,24 @@ export default {
     store.dispatch('updateList', data.id)
   },
   populateShoppingLists: ({ commit }) => {
-    return axios.get('http://localhost:3000/shoppinglists')
+    // return axios.get('http://localhost:3000/shoppinglists')
+    return axios.get('/api/shoppinglists')
       .then(res => {
         commit(POPULATE_SHOPPING_LISTS, res.data)
       })
   },
   updateList: (store, id) => {
     let shoppingList = getters.getListById(store.state, id)
-    return axios.put(`http://localhost:3000/shoppinglists/${id}`, shoppingList)
+    return axios.put(`/api/shoppinglists/${id}`, shoppingList)
   },
   createShoppingList: (store, shoppinglist) => {
-    return axios.post('http://localhost:3000/shoppinglists', shoppinglist)
+    return axios.post('/api/shoppinglists', shoppinglist)
       .then(res => {
         store.dispatch('populateShoppingLists')
       })
   },
   deleteShoppingList: (store, id) => {
-    return axios.delete(`http://localhost:3000/shoppinglists/${id}`)
+    return axios.delete(`/api/shoppinglists/${id}`)
       .then(res => {
         store.dispatch('populateShoppingLists')
       })

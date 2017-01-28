@@ -3,6 +3,8 @@ var config = require('../config')
 if (!process.env.NODE_ENV) process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 var path = require('path')
 var express = require('express')
+// Added this for Heroku-deployment-related changes
+var jsonServer = require('json-server')
 var webpack = require('webpack')
 var opn = require('opn')
 var proxyMiddleware = require('http-proxy-middleware')
@@ -54,6 +56,9 @@ app.use(devMiddleware)
 // enable hot-reload and state-preserving
 // compilation error display
 app.use(hotMiddleware)
+
+// Added this for Heroku-deployment-related changes
+app.use('/api', jsonServer.router('server/db.json'))
 
 // serve pure static assets
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
